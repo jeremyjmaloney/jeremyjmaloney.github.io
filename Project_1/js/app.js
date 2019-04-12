@@ -6,13 +6,16 @@ $(() => {
       for(i = 0; i < data.length; i++) {
         const $div = $('<div>').addClass('joke');
         const $question = $('<h2>').addClass('question').text(data[i].setup);
-        const $answerBtn = $('<button>').addClass('answerBtn').text('Answer');
+        const $showAnswer = $('<h3>').addClass('showAnswer').text('Answer');
         const $answer = $('<h3>').addClass('answer').text(data[i].punchline);
         $div.append($question);
-        $div.append($answerBtn);
+        $div.append($showAnswer);
         $div.append($answer);
         $('.carousel').append($div);
       }
+      $('.showAnswer').on('click', (event) => {
+        $(event.currentTarget).hide();
+      });
     },
     ()=>{
       console.log('request not found');
@@ -28,7 +31,7 @@ $(() => {
       currentJoke = 0;
     }
     $('.joke').eq(currentJoke).css('display', 'block');
-  })
+  });
   $('.previous').on('click', () => {
     $('.joke').eq(currentJoke).css('display', 'none');
     if(currentJoke > 0) {
@@ -37,5 +40,5 @@ $(() => {
       currentJoke = numOfJokes;
     }
     $('.joke').eq(currentJoke).css('display', 'block');
-  })
+  });
 })
