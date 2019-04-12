@@ -19,11 +19,23 @@ $(() => {
     }
   )
   let currentJoke = 0;
+  const numOfJokes = 9;
   $('.next').on('click', () => {
-    console.log(currentJoke);
     $('.joke').eq(currentJoke).css('display', 'none');
-    currentJoke++;
+    if(currentJoke < numOfJokes) {
+      currentJoke++;
+    } else {
+      currentJoke = 0;
+    }
     $('.joke').eq(currentJoke).css('display', 'block');
-    console.log(currentJoke);
+  })
+  $('.previous').on('click', () => {
+    $('.joke').eq(currentJoke).css('display', 'none');
+    if(currentJoke > 0) {
+      currentJoke--;
+    } else {
+      currentJoke = numOfJokes;
+    }
+    $('.joke').eq(currentJoke).css('display', 'block');
   })
 })
