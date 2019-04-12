@@ -1,8 +1,41 @@
 body {
   background-color: black;
   text-align: center;
+  display: block;
+  font-family: helvetica;
 }
 h1 {
   color: white;
   font-family: helvetica, sans-serif;
+}
+h2 {
+  margin: 10% auto;
+}
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 95%;
+  margin: 10% auto;
+  background-color: white;
+}
+.projects {
+  width: 85%;
+  height: 100%;
+  margin: 10% auto;
+  display: flex;
+  justify-content: space-around;
+}
+a {
+  width: 40%;
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 4px 4px 4px rgba(0,0,0,.4);
+}
+.thumbnail {
+  width: 200px;
+  height: 250px;
+  margin-bottom: 10%;
 }

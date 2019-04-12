@@ -1,0 +1,102 @@
+body {
+  text-align: center;
+  width: auto;
+  height: auto;
+  font-family: sans-serif;
+  background-image: url('https://cdn5.vectorstock.com/i/1000x1000/90/44/background-with-isometric-cubes-patterns-vector-13819044.jpg');
+  /* === image courtesy of vector stock === */
+  background-repeat: repeat-x;
+  overflow: hidden;
+
+}
+h1.title {
+  font-size: 4em;
+  text-shadow: 2px 2px yellow;
+}
+.myModal {
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+.myTextbox {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  height: 400px;
+  width: 600px;
+  border: 2px solid yellow;
+  border-radius: 12px;
+  margin: 150px auto;
+  box-shadow: 0 4px 4px rgba(0,0,0,.6);
+}
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  font-size: 2em;
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+p.goAgain {
+  display: none;
+  font-size: 3em;
+}
+p.win {
+  display: none;
+  font-size: 4em;
+}
+p {
+  font-size: 1.5em;
+}
+button {
+  font-size: 2em;
+  width: 120px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border: 2px solid yellow;
+  border-radius: 12px;
+  margin: 0 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0,0,0,.6);
+}
+button:hover {
+  background-color: gray;
+}
+.container {
+  width: 600px;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,.5);
+  margin: 5% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 4px rgba(0,0,0,.6);
+}
+.tile {
+  width: 30%;
+  height: 30%;
+  background-color: rgb(255,255,0);
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 10em;
+  cursor: pointer;
+}
+.tile:hover {
+  border: 2px solid white;
+}
