@@ -1,3 +1,9 @@
 body {
   background-color: gray;
 }
+.joke {
+  display: none;
+}
+.joke:first-of-type {
+  display: block;
+}
