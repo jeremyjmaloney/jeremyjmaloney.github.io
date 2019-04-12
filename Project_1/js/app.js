@@ -43,7 +43,10 @@ $(() => {
       }
       $('.joke').eq(currentJoke).css('display', 'block');
     });
-    $('.loadMore').on('click', (start));
+    $('.loadMore').on('click', () => {
+      currentJoke = 0;
+      start();
+    });
   }
   start();
 })

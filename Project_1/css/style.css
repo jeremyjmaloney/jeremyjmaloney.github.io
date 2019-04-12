@@ -2,17 +2,19 @@ body {
   background-color: ghostwhite;
   text-align: center;
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+  margin: auto;
+  font-family: "comic sans ms";
 }
 header {
-  width: 95%%;
+  width: 100%;
   height: 100px;
-  background-color: gray;
+  background-color: black;
 }
 footer {
   width: 100%;
   height: 100px;
-  background-color: gray;
+  background-color: black;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -22,8 +24,45 @@ footer {
   height: 80%;
   margin: auto;
 }
+.carousel {
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 6px;
+  height: 30vh;
+  width: 100%;
+  margin: auto;
+}
+h1 {
+  font-size: 12vw;
+  color: #f44242;
+  transform: skewX(25deg);
+  margin: 15% auto;
+  text-shadow: 2px 2px black;
+}
+span {
+  color: #425ff4;
+  transform: none;
+}
+h2, h3 {
+  font-size: 2.5vh;
+}
+.showAnswer {
+  position: fixed;
+  z-index: 1;
+  width: 80vw;
+  border-radius: 6px;
+  background-color: #00e029;
+  padding: 5% 0;
+  font-size: 4vh;
+}
+.answer {
+  position: fixed;
+  width: 80vw;
+  padding: 10% 0;
+}
 .joke {
   display: none;
+
 }
 .joke:first-of-type {
   display: block;
