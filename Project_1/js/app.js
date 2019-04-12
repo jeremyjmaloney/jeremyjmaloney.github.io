@@ -18,4 +18,12 @@ $(() => {
       console.log('request not found');
     }
   )
+  let currentJoke = 0;
+  $('.next').on('click', () => {
+    console.log(currentJoke);
+    $('.joke').eq(currentJoke).css('display', 'none');
+    currentJoke++;
+    $('.joke').eq(currentJoke).css('display', 'block');
+    console.log(currentJoke);
+  })
 })
