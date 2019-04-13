@@ -1,12 +1,9 @@
 body {
   text-align: center;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   font-family: sans-serif;
-  background-image: url('https://cdn5.vectorstock.com/i/1000x1000/90/44/background-with-isometric-cubes-patterns-vector-13819044.jpg');
-  /* === image courtesy of vector stock === */
-  background-repeat: repeat-x;
-  overflow: hidden;
+  background-color: white;
 
 }
 h1.title {
@@ -28,8 +25,8 @@ h1.title {
   flex-direction: column;
   background-color: black;
   color: white;
-  height: 400px;
-  width: 600px;
+  width: 70%;
+  height: 70vw;
   border: 2px solid yellow;
   border-radius: 12px;
   margin: 150px auto;
@@ -49,21 +46,27 @@ h1.title {
   font-weight: bold;
   cursor: pointer;
 }
+h1 {
+  font-size: 4vw;
+}
+h2 {
+  font-size: 4vw;
+}
 p.goAgain {
   display: none;
-  font-size: 3em;
+  font-size: 3vw;
 }
 p.win {
   display: none;
-  font-size: 4em;
+  font-size: 8vw;
 }
 p {
-  font-size: 1.5em;
+  font-size: 3vw;
 }
 button {
-  font-size: 2em;
-  width: 120px;
-  height: 60px;
+  font-size: 6vw;
+  width: 28vw;
+  height: 12vw;
   background-color: black;
   color: white;
   border: 2px solid yellow;
@@ -76,27 +79,32 @@ button:hover {
   background-color: gray;
 }
 .container {
-  width: 600px;
-  height: 600px;
+  width: 70%;
+  height: 70%;
   border: 2px solid black;
   border-radius: 12px;
   background-color: rgba(0,0,0,.5);
   margin: 5% auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 4px 4px rgba(0,0,0,.6);
 }
 .tile {
-  width: 30%;
-  height: 30%;
+  width: 18vw;
+  height: 18vw;
   background-color: rgb(255,255,0);
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 12px;
-  font-size: 10em;
+  font-size: 22vw;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2vw;
+  padding-left: 2vw;
 }
 .tile:hover {
-  border: 2px solid white;
+  border: 1px solid white;
 }
