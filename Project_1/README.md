@@ -13,3 +13,7 @@
 * If the user had read all the jokes they may click "Load More" to load 10 more jokes at random from the joke api.
 * The app was created to be very user friendly and easy to understand. For this reason there is no need for instructions because the concept is immediately understood.
 * The QUICKjoke application works best when viewed on mobile, but was made to be scalable depending on the size of the screen, while still maintaining the same look.
+
+## Visit the Site
+* To see the App in action, go to:
+https://jeremyjmaloney.github.io/Project_1/index.html
