@@ -28,12 +28,17 @@ $(()=> {
               let $date = $('<h4>').text(days[i].applicable_date.substring(5));
               let $photoCode = days[i].weather_state_abbr;
               let $photo = $('<img>').attr('src', `https://www.metaweather.com/static/img/weather/png/64/${$photoCode}.png`).addClass('icon');
-              let $curTemp = $('<h4>').text(Math.round(((days[i].the_temp * 9/5) + 32)) + '°');
+              let $description = $('<h5>').text(days[i].weather_state_name);
+              let $lowTemp = Math.round((days[i].min_temp * 9/5) + 32);
+              let $curTemp = Math.round((days[i].the_temp * 9/5) + 32);
+              let $highTemp = Math.round((days[i].max_temp * 9/5) + 32);
+              let $temps = $('<h4>').text(`${$lowTemp}° ${$curTemp}° ${$highTemp}°`);
               $weatherDiv.append($whatDay).addClass('whatDay');
               $weatherDiv.append($date);
+              $weatherDiv.append($description);
               $weatherDiv.append($photo);
-              $weatherDiv.append($curTemp);
-              $('.week').fadeIn();
+              $weatherDiv.append($temps);
+              $('.week').show();
               $('.week').append($weatherDiv);
               if($dotw < 6) {
                 $dotw++;
