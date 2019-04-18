@@ -21,14 +21,16 @@ $(()=> {
             $('.week').append($cityHeader);
             for(let i = 0; i < days.length; i++) {
               let $weatherDiv = $('<div>');
-              let $date = days[i].applicable_date;
+              let $whatDay = $('<h3>').text(weekday[$dotw]);
+              let $date = $('<h4>').text(days[i].applicable_date.substring(5));
               let $photoCode = days[i].weather_state_abbr;
               let $photo = $('<img>').attr('src', `https://www.metaweather.com/static/img/weather/png/64/${$photoCode}.png`).addClass('icon');
-              let $curTemp = Math.round(((days[i].the_temp * 9/5) + 32));
-              $weatherDiv.append($dotw).text(weekday[$dotw]);
+              let $curTemp = $('<h4>').text(Math.round(((days[i].the_temp * 9/5) + 32)));
+              $weatherDiv.append($whatDay).addClass('whatDay');
               $weatherDiv.append($date);
               $weatherDiv.append($photo);
               $weatherDiv.append($curTemp);
+              $('.week').fadeIn();
               $('.week').append($weatherDiv);
               if($dotw < 6) {
                 $dotw++;

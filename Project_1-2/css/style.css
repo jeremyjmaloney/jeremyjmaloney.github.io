@@ -1,4 +1,51 @@
-/* .icon {
-  width: 50px;
-  height: 50px;
-} */
+body {
+  text-align: center;
+  display: block;
+  background-color: #c1c1c1;
+  font-family: helvetica, sans-serif;
+}
+.location {
+  margin: 5%;
+  width: 200px;
+  height: 40px;
+  font-size: 2em;
+  border-radius: 12px;
+}
+.submit {
+  margin: 5%;
+  width: 120px;
+  height: 40px;
+  font-size: 1em;
+  color: white;
+  background-color: #99c0ff;
+  border-radius: 12px;
+}
+.week {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
+}
+h1 {
+  font-size: 3em;
+  color: white;
+}
+h2 {
+  display: block;
+  width: 100%;
+  margin: 5% 0;
+  font-size: 2em;
+}
+h3 {
+  color: white;
+}
+.whatDay {
+  display: block;
+  background-image: linear-gradient(#99c0ff, #d8e4ff);
+  border: 4px solid #d8e4ff;
+  border-radius: 12px;
+  width: 130px;
+  margin: 5px;
+  margin-bottom: 5%;
+}
