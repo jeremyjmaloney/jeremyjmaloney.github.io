@@ -10,14 +10,15 @@ $(()=> {
       (data)=>{
         let parsedData = JSON.parse(data);
         let woeidNumber = parsedData[0].woeid;
-        console.log(woeidNumber);
+        let cityName = parsedData[0].title;
         $.ajax({
           url:`https://cors.io/?https://www.metaweather.com/api/location/${woeidNumber}`
         }).then(
           (data)=>{
             let parsedData = JSON.parse(data);
-            // console.log(parsedData.consolidated_weather[0].applicable_date);
             let days = parsedData.consolidated_weather;
+            const $cityHeader = $('<h2>').text(`${cityName} Weather`);
+            $('.week').append($cityHeader);
             for(let i = 0; i < days.length; i++) {
               let $weatherDiv = $('<div>');
               let $date = days[i].applicable_date;
@@ -29,8 +30,13 @@ $(()=> {
               $weatherDiv.append($photo);
               $weatherDiv.append($curTemp);
               $('.week').append($weatherDiv);
-              $dotw++;
+              if($dotw < 6) {
+                $dotw++;
+              } else {
+                $dotw = 0;
+              }
             }
+            $('.location').val('');
           }
         )
       },
