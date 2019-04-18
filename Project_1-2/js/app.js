@@ -1,4 +1,7 @@
 $(()=> {
+  $('.location').on('click', (event) => {
+    $('.location').val('');
+  })
   $('.submit').on('click', (event) => {
     $('.week').empty();
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -25,7 +28,7 @@ $(()=> {
               let $date = $('<h4>').text(days[i].applicable_date.substring(5));
               let $photoCode = days[i].weather_state_abbr;
               let $photo = $('<img>').attr('src', `https://www.metaweather.com/static/img/weather/png/64/${$photoCode}.png`).addClass('icon');
-              let $curTemp = $('<h4>').text(Math.round(((days[i].the_temp * 9/5) + 32)));
+              let $curTemp = $('<h4>').text(Math.round(((days[i].the_temp * 9/5) + 32)) + '°');
               $weatherDiv.append($whatDay).addClass('whatDay');
               $weatherDiv.append($date);
               $weatherDiv.append($photo);
