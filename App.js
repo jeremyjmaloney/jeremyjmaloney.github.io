@@ -1,28 +1,25 @@
-()=>{
-  var winheight, docheight, trackLength, throttlescroll
-
-  function getmeasurements(){
-      winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
-      docheight = getDocHeight()
-      trackLength = docheight - winheight
+class App extends React.Component {
+  handleScroll = (event) => {
+    let scrollAmount = event.deltaY;
+    let count = 0;
+    console.log('I scrolled');
+    count++;
+    console.log(count);
+    }
   }
-
-  function amountscrolled(){
-      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-      var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-      console.log(pctScrolled + '% scrolled')
+  render() {
+    return (
+      <div className="content-container" onWheel={this.handleScroll}>
+        <p>lsdkfaj dsfaj sdlfajfljsdlf jasfljsdfljopweifpoweiufpoweifu pawoeifu apoeifua apsodifu pasodiuf paodsiuf poasudf poaidsuf posiduf poausd pfoiasdufpo isudpfoiasud fpoisdufpoiw eurpoqiweurpoqewi rupqoweiruer uqpeowirupeowiru eowiru eow roi euwproiu qweoiru qoweiur pwoeqi r</p>
+        <p>lsdkfaj dsfaj sdlfajfljsdlf jasfljsdfljopweifpoweiufpoweifu pawoeifu apoeifua apsodifu pasodiuf paodsiuf poasudf poaidsuf posiduf poausd pfoiasdufpo isudpfoiasud fpoisdufpoiw eurpoqiweurpoqewi rupqoweiruer uqpeowirupeowiru eowiru eow roi euwproiu qweoiru qoweiur pwoeqi r</p>
+        <p>lsdkfaj dsfaj sdlfajfljsdlf jasfljsdfljopweifpoweiufpoweifu pawoeifu apoeifua apsodifu pasodiuf paodsiuf poasudf poaidsuf posiduf poausd pfoiasdufpo isudpfoiasud fpoisdufpoiw eurpoqiweurpoqewi rupqoweiruer uqpeowirupeowiru eowiru eow roi euwproiu qweoiru qoweiur pwoeqi r</p>
+        <p>lsdkfaj dsfaj sdlfajfljsdlf jasfljsdfljopweifpoweiufpoweifu pawoeifu apoeifua apsodifu pasodiuf paodsiuf poasudf poaidsuf posiduf poausd pfoiasdufpo isudpfoiasud fpoisdufpoiw eurpoqiweurpoqewi rupqoweiruer uqpeowirupeowiru eowiru eow roi euwproiu qweoiru qoweiur pwoeqi r</p>
+      </div>
+    )
   }
-
-  getmeasurements()
-
-  window.addEventListener("resize", function(){
-      getmeasurements()
-  }, false)
-
-  window.addEventListener("scroll", function(){
-      clearTimeout(throttlescroll)
-          throttlescroll = setTimeout(function(){ // throttle code inside scroll to once every 50 milliseconds
-          amountscrolled()
-      }, 50)
-  }, false)
 }
+
+ReactDOM.render(
+  <App />,
+  document.querySelector('.container')
+)
