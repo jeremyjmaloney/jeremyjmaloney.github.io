@@ -1,36 +1,26 @@
-import React from 'react';
-import { render } from 'react-dom';
+var winheight, docheight, trackLength, throttlescroll
 
-class App extends React.Component {
-    constructor(props) {
-    super(props);
-
-    this.state = {
-      isTop: true
-    };
-    this.onScroll = this.onScroll.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-        this.onScroll(isTop);
-      }
-    });
-  }
-
-  onScroll(isTop) {
-    this.setState({ isTop });
-  }
-
-  render() {
-    return (
-      <div style={{ height: '200vh' }}>
-        <h2 style={{ position: 'fixed', top: 0 }}>Scroll {this.state.isTop ? 'down' : 'up'}!</h2>
-      </div>
-    );
-  }
+function getmeasurements(){
+    winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+    docheight = getDocHeight()
+    trackLength = docheight - winheight
 }
 
-render(<App />, document.getElementById('root'));
+function amountscrolled(){
+    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+    var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    console.log(pctScrolled + '% scrolled')
+}
+
+getmeasurements()
+
+window.addEventListener("resize", function(){
+    getmeasurements()
+}, false)
+
+window.addEventListener("scroll", function(){
+    clearTimeout(throttlescroll)
+        throttlescroll = setTimeout(function(){ // throttle code inside scroll to once every 50 milliseconds
+        amountscrolled()
+    }, 50)
+}, false)
