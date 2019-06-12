@@ -26,7 +26,6 @@ class App extends React.Component {
 
   render() {
     return (
-      console.log('hello')
       <div style={{ height: '200vh' }}>
         <h2 style={{ position: 'fixed', top: 0 }}>Scroll {this.state.isTop ? 'down' : 'up'}!</h2>
       </div>
