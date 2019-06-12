@@ -1,3 +1,23 @@
-.container {
-  
+html {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #22252b;
+  color: #80858f;
+}
+.content {
+  background-color: #292c33;
+  width: 80%;
+  height: 97%;
+  position: fixed;
+  top: 3%;
+  right: 0;
+  left: 20%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
